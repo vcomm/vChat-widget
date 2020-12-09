@@ -17,13 +17,33 @@ textarea {
     top: unset;
     right: unset;
 }
-
+/*
 .md-dialog {
     height: 350px;
     bottom: 0;
     position: fixed;
     right: 0;
     top: 100vh;
+    transform: translate(0%, -50%);
+    left: unset;
+    &-container {
+        border: 1px solid gainsboro;
+        flex-flow: row;
+    }
+    &-actions {
+        padding: 0;
+    }
+    &-content {
+        padding: 1rem;
+        background: url('./../assets/msg_bck.png');
+        background-size: 100% 100%;
+    }
+}
+*/
+.md-dialog {
+    right: 50px;
+    height: 350px;
+    position: fixed;
     transform: translate(0%, -50%);
     left: unset;
     &-container {

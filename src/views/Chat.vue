@@ -36,17 +36,22 @@
           :maxMessageLength="120"
           :chatContainer="'md-app-scroller'">
         </ChatArea>
+        <ChatDialog 
+          :showDialog="openPrivateChat" 
+          @close-chat="closePrivateChat()">
+        </ChatDialog>
       </md-app-content>
     </md-app>
 
     <MessageArea 
       @send-message="sendMessage($event)">
     </MessageArea>
-
+<!--
     <ChatDialog 
       :showDialog="openPrivateChat" 
       @close-chat="closePrivateChat()">
     </ChatDialog>
+-->
   </div>
 </template>
 
@@ -136,6 +141,9 @@ export default {
       ) {
         this.openPrivateChat.msg.push({ msg: privateMessage });
         this.openPrivateChat = { ...this.openPrivateChat, closed: true };
+        console.log(`${from} Leaved Private Room`);
+//        this.$refs.ChatDialog.closeChat();
+        this.$root.$emit('closechat', from);
       }
     },
 

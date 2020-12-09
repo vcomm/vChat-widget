@@ -9,9 +9,11 @@
         @keyup.enter="sendMessage()">
       </textarea>
     </div>
+    <!--
     <div>
       <md-button class="md-primary" @click="sendMessage()">Send</md-button>
     </div>
+    -->
   </div>
 </template>
 

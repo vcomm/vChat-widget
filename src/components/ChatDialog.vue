@@ -166,7 +166,12 @@ export default {
         });
       }
     }
-  }
+  },
+  created () {
+    this.$root.$on('closechat', (from) => {
+      this.closeChat();
+    })
+}
 };
 </script>
 
